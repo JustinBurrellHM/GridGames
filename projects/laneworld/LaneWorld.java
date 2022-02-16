@@ -74,11 +74,13 @@ public class LaneWorld extends ActorWorld {
    * Then check for fainted pets
    */
   private void battle() {
+    Pet leftPet = teamLeft.getFrontPet();
+    Pet rightPet = teamRight.getFrontPet();
+    leftPet.attack(rightPet);
+    rightPet.attack(leftPet);
+    checkForFaintedPets();
+
     
-    
-    
-    
-    /* TODO */
   }
 
   /**
@@ -97,7 +99,10 @@ public class LaneWorld extends ActorWorld {
    * and preventing further steps.
    */
   private void checkWin() {
-    /* TODO */
+    if (teamLeft.isEmpty()){
+
+    }
+  
 
     if (leftKO || rightKO) {
       gameOver = true;
