@@ -114,6 +114,24 @@ public abstract class Team{
    * go into the middle Location (0,5)
    */
   public void movePets() {
+    for (Pet p : pets) {
+      Location loc = p.getLocation();
+      if (loc.getCol() != 0){
+        if (this.isLeft){
+          Location newLoc = p.getLocation().getAdjacentLocation(90);
+          if(newLoc == null){
+            p.moveTo(newLoc);
+          }
+        }
+        
+        else if (!this.isLeft){
+          Location newLoc = p.getLocation().getAdjacentLocation(-90);
+          if(newLoc == null){
+            p.moveTo(newLoc);
+          }
+        }
+    }}
+    
     
     
     
