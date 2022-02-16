@@ -5,11 +5,12 @@ import info.gridworld.actor.Actor;
 import info.gridworld.grid.Grid;
 import info.gridworld.grid.Location;
 
+
 /**
  * A Team holds up to 5 Pets and contains
  * the logic necessary to manage all pets
  */
-public abstract class Team {
+public abstract class Team{
   private ArrayList<Pet> pets;
   private boolean isLeft;
   private static final Random random = new Random();
@@ -52,7 +53,13 @@ public abstract class Team {
    *         if no such pet exists, then return null
    */
   public Pet getFrontPet() {
-    /* TODO */
+    if (!pets.isEmpty()){
+      return pets.get(0);
+    }
+    else{
+      return null;
+    }
+
   }
 
   /**
@@ -60,7 +67,10 @@ public abstract class Team {
    *         if no such pet exists, then return null
    */
   public Pet getRandomPet(Pet p) {
-    /* TODO */
+    Random rand = new Random();
+    int whichPet = rand.nextInt(pets.size()); 
+    return pets.get(whichPet);
+
   }
 
   /* Setters */
@@ -89,7 +99,10 @@ public abstract class Team {
    */
   public void checkForFaintedPets(Team opponents) {
     for (Pet p : pets) {
-      /* TODO */
+     if (p.fainted()){
+        p.onFaint(opponents);
+        p.faint();
+     }
     }
     pets.removeIf(p -> p.fainted());
     movePets();
@@ -101,6 +114,10 @@ public abstract class Team {
    * go into the middle Location (0,5)
    */
   public void movePets() {
+    
+    
+    
+    
     /* TODO */
   }
 

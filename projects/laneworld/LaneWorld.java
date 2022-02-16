@@ -74,6 +74,10 @@ public class LaneWorld extends ActorWorld {
    * Then check for fainted pets
    */
   private void battle() {
+    
+    
+    
+    
     /* TODO */
   }
 
