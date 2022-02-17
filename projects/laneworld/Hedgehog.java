@@ -7,26 +7,27 @@ import java.util.ArrayList;
 public class Hedgehog extends Pet {
   
   private ArrayList<Pet> pets;
-  private int bonusAtk = 2;
 
   public Hedgehog(int id, int direction, Team team) {
     super(id, "Hedgehog", 3, 2, direction, team);
   }
 
   public void onFaint(Team opponents) {
-    for (Pet p : pets){
-      changeHp(2);
+    ArrayList<Pet> o = opponents.getPets();
+    ArrayList<Pet> t = team.getPets();
+    
+    for (int i = 0; i < t.size(); i++) {
+      t.get(i).changeHp(-2);
+   
+    for (int z = 0; z < o.size(); z++) {
+      o.get(i).changeHp(-2);
       
-
     }
-    
-    
-    if (friend != null) {
-      LaneWorldLogger.log(String.format("%s gains +%d.", friend, bonusAtk));
-      friend.changeAttack(bonusAtk);
-      }
-    }
-
-  /* TODO */
-
+  }
 }
+}
+    
+
+ 
+
+
