@@ -99,11 +99,16 @@ public class LaneWorld extends ActorWorld {
    * and preventing further steps.
    */
   private void checkWin() {
-    if (teamLeft.isEmpty()){
+    boolean leftKO = false;
+    boolean rightKO = false;
 
+    if (teamLeft.isAllFainted()){
+      leftKO = true;
+    } 
+    if (teamRight.isAllFainted()) {
+      rightKO = true;
     }
   
-
     if (leftKO || rightKO) {
       gameOver = true;
     }
