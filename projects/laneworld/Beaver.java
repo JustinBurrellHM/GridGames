@@ -12,7 +12,10 @@ public class Beaver extends Pet {
   }
 
   private void helpFriend() {
-    /* TODO */
+    for (int i = 0; i < numFriends; i++) {
+      Pet randPet = this.team.getRandomPet(this);
+      randPet.changeHp(bonusHp);
+    }
   }
 
   public void onStart(Team opponents) {
