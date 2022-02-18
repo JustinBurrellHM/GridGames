@@ -62,6 +62,15 @@ public abstract class Team{
 
   }
 
+  public Pet getBackPet(){
+    if (!pets.isEmpty()){
+      return pets.get(-1);
+    }
+    else{
+      return null;
+    }
+  }
+
   /**
    * @return a random pet distinct from the given pet
    *         if no such pet exists, then return null
