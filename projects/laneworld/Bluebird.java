@@ -12,7 +12,7 @@ public class Bluebird extends Pet {
     int bonusAtk = 1;
     Pet frontmostPet = team.getFrontPet();
     if (frontmostPet != null) {
-      LaneWorldLogger.log(String.format("%s gains +%d/+%d.", frontmostPet, bonusAtk));
+      LaneWorldLogger.log(String.format("%s gains +%d/+0", frontmostPet, bonusAtk));
       frontmostPet.changeAttack(bonusAtk);
     }
   }
